@@ -21,7 +21,7 @@ def valid_phone_numbers(string)
 end
 
 def area_codes(string)
-	string.scan(/1-([2-9][0-9][0-9])-[2-9][1-9][1-9]-\d{4}|([2-9][0-9][0-9])-[2-9][1-9][1-9]-\d{4}|([2-9][1-9][1-9])-\d{4}/).flatten.compact
+	string.scan(/1-([2-9][0-9][0-9])-[2-9][1-9][1-9]-\d{4}|([2-9][0-9][0-9])-[2-9][1-9][1-9]-\d{4}|[2-9][1-9][1-9]-\d{4}/).flatten.compact
 end
 
 def email_addresses(string)
