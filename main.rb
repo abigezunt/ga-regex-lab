@@ -28,7 +28,8 @@ def email_addresses(string)
 	string.scan(/[a-z0-9A-Z_-]+@[a-z0-9A-Z_-]+.[a-z]{3}/)
 end
 
-def zip_codes 
+def zip_codes(string)
+	string.scan(/\b\d{5}\b/)
 end
 
 def hex_colors 
@@ -36,5 +37,6 @@ end
 
 p email_addresses(@source_text)
 p valid_phone_numbers(@source_text)
+p zip_codes(@source_text)
 
 
