@@ -7,8 +7,9 @@ require 'pry'
 
 # string.scan(pattern)
 
-def valid_ip_addresses 
-end 
+def valid_ip_addresses(string)
+	string.scan(/[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]/)
+end
 
 def valid_mit_ip_addresses 
 end
@@ -36,6 +37,7 @@ def hex_colors(string)
 	string.scan(/#([0-9a-fA-F]{6}\b)/).flatten
 end
 
+p valid_ip_addresses(@source_text)
 p email_addresses(@source_text)
 p valid_phone_numbers(@source_text)
 p area_codes(@source_text)
