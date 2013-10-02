@@ -15,7 +15,10 @@ def valid_mit_ip_addresses(string)
 	string.scan(/18\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]/)
 end
 
-def non_mit_ip_addresses 
+def non_mit_ip_addresses(string)
+	all = valid_ip_addresses(string)
+	mit = valid_mit_ip_addresses(string)
+	return all - mit
 end 
 
 def valid_phone_numbers(string)
@@ -40,6 +43,7 @@ end
 
 p valid_ip_addresses(@source_text)
 p valid_mit_ip_addresses(@source_text)
+p non_mit_ip_addresses(@source_text)
 p email_addresses(@source_text)
 p valid_phone_numbers(@source_text)
 p area_codes(@source_text)
