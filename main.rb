@@ -17,10 +17,14 @@ def non_mit_ip_addresses
 end 
 
 def valid_phone_numbers(string)
-	string.scan(/(1[-\/ ])?\(?([2-9][0-9][0-9])?\)?[-\/ ]?([2-9][1-9][1-9])([-\/ ])(\d{4})/)
+	# string.scan(/(1-)?([2-9][0-9][0-9]-)?[2-9][1-9][1-9]-\d{4}/)
+	# string.scan(/1[-\/ ])?\(?([2-9][0-9][0-9])?\)?[-\/ ]?([2-9][1-9][1-9])([-\/ ])(\d{4}/)
+	# string.scan(/1?-?[2-9][0-9][0-9]?-?[2-9][1-9][1-9]-\d{4}/)
+	string.scan(/1-[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][1-9][1-9]-\d{4}/)
 end
 
 def area_codes 
+	string.scan
 end
 
 def email_addresses(string)
@@ -33,6 +37,7 @@ end
 def hex_colors 
 end
 
-email_addresses = email_addresses(@source_text)
-valid_phone_numbers = valid_phone_numbers(@source_text)
-puts valid_phone_numbers.join(" ")
+p email_addresses(@source_text)
+p valid_phone_numbers(@source_text)
+
+
