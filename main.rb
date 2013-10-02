@@ -20,8 +20,8 @@ def valid_phone_numbers(string)
 	string.scan(/1-[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][1-9][1-9]-\d{4}/)
 end
 
-def area_codes 
-	string.scan
+def area_codes(string)
+	string.scan(/1-([2-9][0-9][0-9])-[2-9][1-9][1-9]-\d{4}|([2-9][0-9][0-9])-[2-9][1-9][1-9]-\d{4}|([2-9][1-9][1-9])-\d{4}/).flatten.compact
 end
 
 def email_addresses(string)
@@ -38,6 +38,7 @@ end
 
 p email_addresses(@source_text)
 p valid_phone_numbers(@source_text)
+p area_codes(@source_text)
 p zip_codes(@source_text)
 p hex_colors(@source_text)
 
