@@ -8,7 +8,12 @@ require 'pry'
 # string.scan(pattern)
 
 def valid_ip_addresses(string)
-	string.scan(/[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]/)
+	arr = string.scan(/\b([0-9]|1?[0-9][0-9]|2[0-9][0-9])\.([0-9]|1?[0-9][0-9]|2[0-9][0-9])\.([0-9]|1?[0-9][0-9]|2[0-9][0-9])\.([0-9]|1?[0-9][0-9]|2[0-9][0-9])\b/)
+	ips = arr.map do |subarray|
+		subarray.join(".")
+	end
+	return ips
+	# string.scan(/[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]\.[0-2]?[0-9]?[0-9]/)
 end
 
 def valid_mit_ip_addresses(string)
@@ -22,7 +27,10 @@ def non_mit_ip_addresses(string)
 end 
 
 def valid_phone_numbers(string)
-	string.scan(/1-[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][1-9][1-9]-\d{4}/)
+	string.scan(/((1-)([2-9][0-9][0-9])-([2-9][1-9][1-9])-(\d{4}))/)
+	return "#{string[0]}#{string[1]}#{string[2]}"
+
+	# string.scan(/1-[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][0-9][0-9]-[2-9][1-9][1-9]-\d{4}|[2-9][1-9][1-9]-\d{4}/)
 end
 
 def area_codes(string)
